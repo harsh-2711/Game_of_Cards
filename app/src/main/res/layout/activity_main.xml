@@ -7,27 +7,49 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#000000"
     tools:context="harshvasoya.gameofcards.MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEEN PATTI"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="60sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/head"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play and Win"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/head"
+        android:textSize="30sp"
+        android:textColor="@color/colorAccent"/>
 
     <Button
         android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Single Player"
+        android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="@color/colorAccent"
+        android:text="Single Player"
         android:id="@+id/btn_play"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="@color/colorAccent"
         android:layout_below="@+id/btn_play"
         android:layout_marginTop="8dp"
         android:text="Multi-Player"
-        android:textAllCaps="false"
-        android:textSize="20sp"
         android:id="@+id/btn_play2"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
