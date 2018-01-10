@@ -142,6 +142,7 @@ public class Table extends Activity {
         cpu4 = new CPU_Player("CPU4",1000);
         human = new Player("You",1000);
 
+
         pot=0;
         dablaPlayer = 4;
         amt_call=0;
@@ -171,7 +172,6 @@ public class Table extends Activity {
                 cpu4.isPlaying=true;
                 human.isPlaying=true;
 
-                put_dablu();
                 turn = (dablaPlayer+1)%5;
                 playerList.clear();
                 for (int i=1;i<=5;i++){
@@ -194,7 +194,7 @@ public class Table extends Activity {
                 // dealing the cards...
                 for (int i = 1; i <= 15; i++) {
                     switch (i%5){
-                        case 0: human.addCard(deck.dealCard()); break;
+                        case 0: human.addCard(deck.dealCard());break;
                         case 1: cpu1.addCard(deck.dealCard()); break;
                         case 2: cpu2.addCard(deck.dealCard()); break;
                         case 3: cpu3.addCard(deck.dealCard()); break;
@@ -217,29 +217,71 @@ public class Table extends Activity {
                 text_call_amt.setText(String.valueOf(amt_call));
                 text_raise_amt.setText(String.valueOf(amt_raise));
 
+                int id = R.drawable.back_card;
+
                 if (!cpu1.isOut) {
-                    cpu1_card1.setText("??");
-                    cpu1_card2.setText("??");
-                    cpu1_card3.setText("??");
+                    TextView v1 = (TextView) findViewById(R.id.cpu1_cardnum1);
+                    v1.setText("");
+                    v1.setBackgroundResource(id);
+                    TextView v2 = (TextView) findViewById(R.id.cpu1_card2);
+                    v2.setText("");
+                    v2.setBackgroundResource(id);
+                    TextView v3 = (TextView) findViewById(R.id.cpu1_card3);
+                    v3.setText("");
+                    v3.setBackgroundResource(id);
                 }
                 if (!cpu2.isOut) {
-                    cpu2_card1.setText("??");
-                    cpu2_card2.setText("??");
-                    cpu2_card3.setText("??");
+                    TextView v1 = (TextView) findViewById(R.id.cpu2_cardnum1);
+                    v1.setText("");
+                    v1.setBackgroundResource(id);
+                    TextView v2 = (TextView) findViewById(R.id.cpu2_card2);
+                    v2.setText("");
+                    v2.setBackgroundResource(id);
+                    TextView v3 = (TextView) findViewById(R.id.cpu2_card3);
+                    v3.setText("");
+                    v3.setBackgroundResource(id);
                 }
                 if (!cpu3.isOut) {
-                    cpu3_card1.setText("??");
-                    cpu3_card2.setText("??");
-                    cpu3_card3.setText("??");
+                    TextView v1 = (TextView) findViewById(R.id.cpu3_cardnum1);
+                    v1.setText("");
+                    v1.setBackgroundResource(id);
+                    TextView v2 = (TextView) findViewById(R.id.cpu3_card2);
+                    v2.setText("");
+                    v2.setBackgroundResource(id);
+                    TextView v3 = (TextView) findViewById(R.id.cpu3_card3);
+                    v3.setText("");
+                    v3.setBackgroundResource(id);
                 }
                 if (!cpu4.isOut) {
-                    cpu4_card1.setText("??");
-                    cpu4_card2.setText("??");
-                    cpu4_card3.setText("??");
+                    TextView v1 = (TextView) findViewById(R.id.cpu4_cardnum1);
+                    v1.setText("");
+                    v1.setBackgroundResource(id);
+                    TextView v2 = (TextView) findViewById(R.id.cpu4_card2);
+                    v2.setText("");
+                    v2.setBackgroundResource(id);
+                    TextView v3 = (TextView) findViewById(R.id.cpu4_card3);
+                    v3.setText("");
+                    v3.setBackgroundResource(id);
                 }
-                player_card1.setText(human.hand.get(0).toString());
-                player_card2.setText(human.hand.get(1).toString());
-                player_card3.setText(human.hand.get(2).toString());
+
+
+                int card_1_card_no = human.hand.get(0).getCardNum();
+                int card_1_suit_no = human.hand.get(0).getSuitNum();
+                TextView txt1 = (TextView) findViewById(R.id.human_card1);
+                int id1 = human.hand.get(0).showPhoto(card_1_card_no,card_1_suit_no);
+                txt1.setBackgroundResource(id1);
+
+                int card_2_card_no = human.hand.get(1).getCardNum();
+                int card_2_suit_no = human.hand.get(1).getSuitNum();
+                TextView txt2 = (TextView) findViewById(R.id.human_card2);
+                int id2 = human.hand.get(1).showPhoto(card_2_card_no,card_2_suit_no);
+                txt2.setBackgroundResource(id2);
+
+                int card_3_card_no = human.hand.get(2).getCardNum();
+                int card_3_suit_no = human.hand.get(2).getSuitNum();
+                TextView txt3 = (TextView) findViewById(R.id.human_card3);
+                int id3 = human.hand.get(2).showPhoto(card_3_card_no,card_3_suit_no);
+                txt3.setBackgroundResource(id3);
 
                 deal.setVisibility(View.INVISIBLE);
                 cards_human.setVisibility(View.VISIBLE);
@@ -250,7 +292,7 @@ public class Table extends Activity {
 
                 if (playerList.get(0).equals(human)) {
                     fn_bar.setVisibility(View.VISIBLE);
-                    name_human.setBackground(getDrawable(R.color.green));
+                    name_human.setBackground(getDrawable(R.color.white));
                 }
                 else
                     playCPU(0);
@@ -365,22 +407,6 @@ public class Table extends Activity {
         });
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    void put_dablu(){
-        switch (dablaPlayer){
-            case 0: human.deductMoney(amt_dablu);
-                name_human.setBackground(getDrawable(R.color.crimsonRed)); break;
-            case 1: cpu1.deductMoney(amt_dablu);
-                name_cpu1.setBackground(getDrawable(R.color.crimsonRed)); break;
-            case 2: cpu2.deductMoney(amt_dablu);
-                name_cpu2.setBackground(getDrawable(R.color.crimsonRed)); break;
-            case 3: cpu3.deductMoney(amt_dablu);
-                name_cpu3.setBackground(getDrawable(R.color.crimsonRed)); break;
-            case 4: cpu4.deductMoney(amt_dablu);
-                name_cpu4.setBackground(getDrawable(R.color.crimsonRed)); break;
-        }
-    }
-
     boolean isShowAsked=false;
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void playCPU(final int start) {
@@ -468,7 +494,7 @@ public class Table extends Activity {
         public void handleMessage(Message msg) {
             Log.i("tag","human turn");
             fn_bar.setVisibility(View.VISIBLE);
-            name_human.setBackground(getDrawable(R.color.green));
+            name_human.setBackground(getDrawable(R.color.white));
             if (playerList.size()==2 && !isShowEnabled) {
                 fn_bar.addView(show);
                 isShowEnabled = true;
@@ -482,10 +508,10 @@ public class Table extends Activity {
         public void handleMessage(Message msg) {
             String name = msg.getData().getString("name");
             switch (name){
-                case "CPU1": name_cpu1.setBackground(getDrawable(R.color.green)); break;
-                case "CPU2": name_cpu2.setBackground(getDrawable(R.color.green)); break;
-                case "CPU3": name_cpu3.setBackground(getDrawable(R.color.green)); break;
-                case "CPU4": name_cpu4.setBackground(getDrawable(R.color.green)); break;
+                case "CPU1": name_cpu1.setBackground(getDrawable(R.color.white)); break;
+                case "CPU2": name_cpu2.setBackground(getDrawable(R.color.white)); break;
+                case "CPU3": name_cpu3.setBackground(getDrawable(R.color.white)); break;
+                case "CPU4": name_cpu4.setBackground(getDrawable(R.color.white)); break;
             }
         }
     };
@@ -655,11 +681,11 @@ public class Table extends Activity {
 
             if (signal==1) {
                 switch (name){
-                    case "You": name_human.setBackground(getDrawable(R.color.colorAccent)); break;
-                    case "CPU1": name_cpu1.setBackground(getDrawable(R.color.colorAccent)); break;
-                    case "CPU2": name_cpu2.setBackground(getDrawable(R.color.colorAccent)); break;
-                    case "CPU3": name_cpu3.setBackground(getDrawable(R.color.colorAccent)); break;
-                    case "CPU4": name_cpu4.setBackground(getDrawable(R.color.colorAccent)); break;
+                    case "You": name_human.setBackground(getDrawable(R.color.lightOrange)); break;
+                    case "CPU1": name_cpu1.setBackground(getDrawable(R.color.lightOrange)); break;
+                    case "CPU2": name_cpu2.setBackground(getDrawable(R.color.lightOrange)); break;
+                    case "CPU3": name_cpu3.setBackground(getDrawable(R.color.lightOrange)); break;
+                    case "CPU4": name_cpu4.setBackground(getDrawable(R.color.lightOrange)); break;
                 }
             }else {
                 switch (name){
@@ -905,4 +931,3 @@ public class Table extends Activity {
         }
         super.onPause();
     }
-}
