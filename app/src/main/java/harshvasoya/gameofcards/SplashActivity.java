@@ -1,40 +1,37 @@
 package harshvasoya.gameofcards;
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.TextView;
+import android.os.Handler;
 
+public class SplashActivity extends Activity{
 
-public class SplashActivity extends AppCompatActivity {
-    private TextView tv;
+    private final int SPLASH_DISPLAY_LENGTH = 4000;
+    private static boolean splashLoaded = false;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_splash);
-        tv = (TextView) findViewById(R.id.textView);
-        Animation myanim = AnimationUtils.loadAnimation(this,R.anim.mytransition);
-        tv.startAnimation(myanim);
-        final Intent i = new Intent(SplashActivity.this,MainActivity.class);
-        Thread timer =new Thread(){
-            public void run () {
-                try{
-                    sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                finally {
-                    startActivity(i);
-                    finish();
-                }
+    public void onCreate(Bundle icicle){
+        super.onCreate(icicle);
 
-            }
-        };
-        timer.start();
+        if(!splashLoaded){
+            setContentView(R.layout.activity_splash_screen);
 
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent mainIntent = new Intent(SplashActivity.this,MainActivity.class);
+                    SplashActivity.this.startActivity(mainIntent);
+                    SplashActivity.this.finish();
+                }
+            }, SPLASH_DISPLAY_LENGTH);
+            splashLoaded = true;
+        }
+
+        else{
+            Intent goToMainActivity = new Intent(SplashActivity.this,MainActivity.class);
+            goToMainActivity.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(goToMainActivity);
+            finish();
+        }
     }
 }
