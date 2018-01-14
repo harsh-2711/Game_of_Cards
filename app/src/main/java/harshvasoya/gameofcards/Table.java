@@ -217,51 +217,39 @@ public class Table extends Activity {
                 text_call_amt.setText(String.valueOf(amt_call));
                 text_raise_amt.setText(String.valueOf(amt_raise));
 
-                int id = R.drawable.back_card;
+                int id_back = R.drawable.back_card;
 
                 if (!cpu1.isOut) {
                     TextView v1 = (TextView) findViewById(R.id.cpu1_cardnum1);
-                    v1.setText("");
-                    v1.setBackgroundResource(id);
+                    v1.setBackgroundResource(id_back);
                     TextView v2 = (TextView) findViewById(R.id.cpu1_card2);
-                    v2.setText("");
-                    v2.setBackgroundResource(id);
+                    v2.setBackgroundResource(id_back);
                     TextView v3 = (TextView) findViewById(R.id.cpu1_card3);
-                    v3.setText("");
-                    v3.setBackgroundResource(id);
+                    v3.setBackgroundResource(id_back);
                 }
                 if (!cpu2.isOut) {
                     TextView v1 = (TextView) findViewById(R.id.cpu2_cardnum1);
-                    v1.setText("");
-                    v1.setBackgroundResource(id);
+                    v1.setBackgroundResource(id_back);
                     TextView v2 = (TextView) findViewById(R.id.cpu2_card2);
-                    v2.setText("");
-                    v2.setBackgroundResource(id);
+                    v2.setBackgroundResource(id_back);
                     TextView v3 = (TextView) findViewById(R.id.cpu2_card3);
-                    v3.setText("");
-                    v3.setBackgroundResource(id);
+                    v3.setBackgroundResource(id_back);
                 }
                 if (!cpu3.isOut) {
                     TextView v1 = (TextView) findViewById(R.id.cpu3_cardnum1);
-                    v1.setText("");
-                    v1.setBackgroundResource(id);
+                    v1.setBackgroundResource(id_back);
                     TextView v2 = (TextView) findViewById(R.id.cpu3_card2);
-                    v2.setText("");
-                    v2.setBackgroundResource(id);
+                    v2.setBackgroundResource(id_back);
                     TextView v3 = (TextView) findViewById(R.id.cpu3_card3);
-                    v3.setText("");
-                    v3.setBackgroundResource(id);
+                    v3.setBackgroundResource(id_back);
                 }
                 if (!cpu4.isOut) {
                     TextView v1 = (TextView) findViewById(R.id.cpu4_cardnum1);
-                    v1.setText("");
-                    v1.setBackgroundResource(id);
+                    v1.setBackgroundResource(id_back);
                     TextView v2 = (TextView) findViewById(R.id.cpu4_card2);
-                    v2.setText("");
-                    v2.setBackgroundResource(id);
+                    v2.setBackgroundResource(id_back);
                     TextView v3 = (TextView) findViewById(R.id.cpu4_card3);
-                    v3.setText("");
-                    v3.setBackgroundResource(id);
+                    v3.setBackgroundResource(id_back);
                 }
 
 
@@ -728,24 +716,82 @@ public class Table extends Activity {
 
     public void showCPUCards(){
         if (cpu1.isPlaying) {
-            cpu1_card1.setText(cpu1.hand.get(0).toString());
-            cpu1_card2.setText(cpu1.hand.get(1).toString());
-            cpu1_card3.setText(cpu1.hand.get(2).toString());
+
+            int cpu1_card_1_card_no = cpu1.hand.get(0).getCardNum();
+            int cpu1_card_1_suit_no = cpu1.hand.get(0).getSuitNum();
+            TextView cpu1_txt1 = (TextView) findViewById(R.id.cpu1_cardnum1);
+            int cpu1_id1 = cpu1.hand.get(0).showPhoto(cpu1_card_1_card_no,cpu1_card_1_suit_no);
+            cpu1_txt1.setBackgroundResource(cpu1_id1);
+
+            int cpu1_card_2_card_no = cpu1.hand.get(1).getCardNum();
+            int cpu1_card_2_suit_no = cpu1.hand.get(1).getSuitNum();
+            TextView cpu1_txt2 = (TextView) findViewById(R.id.cpu1_card2);
+            int cpu1_id2 = cpu1.hand.get(1).showPhoto(cpu1_card_2_card_no,cpu1_card_2_suit_no);
+            cpu1_txt2.setBackgroundResource(cpu1_id2);
+
+            int cpu1_card_3_card_no = cpu1.hand.get(2).getCardNum();
+            int cpu1_card_3_suit_no = cpu1.hand.get(2).getSuitNum();
+            TextView cpu1_txt3 = (TextView) findViewById(R.id.cpu1_card3);
+            int cpu1_id3 = cpu1.hand.get(2).showPhoto(cpu1_card_3_card_no,cpu1_card_3_suit_no);
+            cpu1_txt3.setBackgroundResource(cpu1_id3);
+
         }
         if (cpu2.isPlaying) {
-            cpu2_card1.setText(cpu2.hand.get(0).toString());
-            cpu2_card2.setText(cpu2.hand.get(1).toString());
-            cpu2_card3.setText(cpu2.hand.get(2).toString());
+            int cpu2_card_1_card_no = cpu2.hand.get(0).getCardNum();
+            int cpu2_card_1_suit_no = cpu2.hand.get(0).getSuitNum();
+            TextView cpu2_txt1 = (TextView) findViewById(R.id.cpu2_cardnum1);
+            int cpu2_id1 = cpu2.hand.get(0).showPhoto(cpu2_card_1_card_no,cpu2_card_1_suit_no);
+            cpu2_txt1.setBackgroundResource(cpu2_id1);
+
+            int cpu2_card_2_card_no = cpu2.hand.get(1).getCardNum();
+            int cpu2_card_2_suit_no = cpu2.hand.get(1).getSuitNum();
+            TextView cpu2_txt2 = (TextView) findViewById(R.id.cpu2_card2);
+            int cpu2_id2 = cpu2.hand.get(1).showPhoto(cpu2_card_2_card_no,cpu2_card_2_suit_no);
+            cpu2_txt2.setBackgroundResource(cpu2_id2);
+
+            int cpu2_card_3_card_no = cpu2.hand.get(2).getCardNum();
+            int cpu2_card_3_suit_no = cpu2.hand.get(2).getSuitNum();
+            TextView cpu2_txt3 = (TextView) findViewById(R.id.cpu2_card3);
+            int cpu2_id3 = cpu2.hand.get(2).showPhoto(cpu2_card_3_card_no,cpu2_card_3_suit_no);
+            cpu2_txt3.setBackgroundResource(cpu2_id3);
         }
         if (cpu3.isPlaying) {
-            cpu3_card1.setText(cpu3.hand.get(0).toString());
-            cpu3_card2.setText(cpu3.hand.get(1).toString());
-            cpu3_card3.setText(cpu3.hand.get(2).toString());
+            int cpu3_card_1_card_no = cpu3.hand.get(0).getCardNum();
+            int cpu3_card_1_suit_no = cpu3.hand.get(0).getSuitNum();
+            TextView cpu3_txt1 = (TextView) findViewById(R.id.cpu3_cardnum1);
+            int cpu3_id1 = cpu3.hand.get(0).showPhoto(cpu3_card_1_card_no,cpu3_card_1_suit_no);
+            cpu3_txt1.setBackgroundResource(cpu3_id1);
+
+            int cpu3_card_2_card_no = cpu3.hand.get(1).getCardNum();
+            int cpu3_card_2_suit_no = cpu3.hand.get(1).getSuitNum();
+            TextView cpu3_txt2 = (TextView) findViewById(R.id.cpu3_card2);
+            int cpu3_id2 = cpu3.hand.get(1).showPhoto(cpu3_card_2_card_no,cpu3_card_2_suit_no);
+            cpu3_txt2.setBackgroundResource(cpu3_id2);
+
+            int cpu3_card_3_card_no = cpu3.hand.get(2).getCardNum();
+            int cpu3_card_3_suit_no = cpu3.hand.get(2).getSuitNum();
+            TextView cpu3_txt3 = (TextView) findViewById(R.id.cpu3_card3);
+            int cpu3_id3 = cpu3.hand.get(2).showPhoto(cpu3_card_3_card_no,cpu3_card_3_suit_no);
+            cpu3_txt3.setBackgroundResource(cpu3_id3);
         }
         if (cpu4.isPlaying) {
-            cpu4_card1.setText(cpu4.hand.get(0).toString());
-            cpu4_card2.setText(cpu4.hand.get(1).toString());
-            cpu4_card3.setText(cpu4.hand.get(2).toString());
+            int cpu4_card_1_card_no = cpu4.hand.get(0).getCardNum();
+            int cpu4_card_1_suit_no = cpu4.hand.get(0).getSuitNum();
+            TextView cpu4_txt1 = (TextView) findViewById(R.id.cpu4_cardnum1);
+            int cpu4_id1 = cpu4.hand.get(0).showPhoto(cpu4_card_1_card_no,cpu4_card_1_suit_no);
+            cpu4_txt1.setBackgroundResource(cpu4_id1);
+
+            int cpu4_card_2_card_no = cpu4.hand.get(1).getCardNum();
+            int cpu4_card_2_suit_no = cpu4.hand.get(1).getSuitNum();
+            TextView cpu4_txt2 = (TextView) findViewById(R.id.cpu4_card2);
+            int cpu4_id2 = cpu4.hand.get(1).showPhoto(cpu4_card_2_card_no,cpu4_card_2_suit_no);
+            cpu4_txt2.setBackgroundResource(cpu4_id2);
+
+            int cpu4_card_3_card_no = cpu4.hand.get(2).getCardNum();
+            int cpu4_card_3_suit_no = cpu4.hand.get(2).getSuitNum();
+            TextView cpu4_txt3 = (TextView) findViewById(R.id.cpu4_card3);
+            int cpu4_id3 = cpu4.hand.get(2).showPhoto(cpu4_card_3_card_no,cpu4_card_3_suit_no);
+            cpu4_txt3.setBackgroundResource(cpu4_id3);
         }
     }
 
@@ -931,3 +977,4 @@ public class Table extends Activity {
         }
         super.onPause();
     }
+}
