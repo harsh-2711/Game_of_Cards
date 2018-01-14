@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:background="#000000"
     tools:context="harshvasoya.gameofcards.Table"
-    android:paddingTop="30sp">
+    android:paddingTop="5sp">
 
     <TableRow
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:gravity="center"
@@ -15,7 +15,7 @@
 
         <TextView
             android:layout_height="match_parent"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:background="@color/black_overlay"
             android:id="@+id/name_cpu3"
             android:text="CPU3"
@@ -36,7 +36,7 @@
 
         <TextView
             android:layout_height="match_parent"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_marginLeft="60dp"
             android:background="@color/black_overlay"
             android:id="@+id/name_cpu2"
@@ -58,7 +58,7 @@
     </TableRow>
 
     <RelativeLayout
-        android:layout_height="220dp"
+        android:layout_height="218dp"
         android:layout_width="match_parent"
         android:layout_below="@+id/row1"
         android:gravity="center_horizontal"
@@ -99,7 +99,7 @@
             android:background="@drawable/table">
 
             <TableRow
-                android:layout_height="40dp"
+                android:layout_height="44dp"
                 android:layout_width="wrap_content"
                 android:layout_marginTop="2dp"
                 android:layout_marginLeft="25dp"
@@ -107,7 +107,7 @@
 
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:id="@+id/cpu3_cardnum1"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -115,7 +115,7 @@
                     android:background="@color/white"/>
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:layout_marginLeft="2dp"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -124,7 +124,7 @@
                     android:background="@color/white"/>
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:layout_marginLeft="2dp"
                     android:textSize="18sp"
                     android:textColor="#000000"
@@ -134,15 +134,15 @@
             </TableRow>
 
             <TableRow
-                android:layout_height="40dp"
+                android:layout_height="44dp"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="110dp"
+                android:layout_marginTop="95dp"
                 android:layout_marginLeft="2dp"
                 android:id="@+id/cards_cpu4">
 
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:id="@+id/cpu4_cardnum1"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -150,7 +150,7 @@
                     android:background="@color/white"/>
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:layout_marginLeft="2dp"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -159,7 +159,7 @@
                     android:background="@color/white"/>
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:layout_marginLeft="2dp"
                     android:textSize="18sp"
                     android:textColor="#000000"
@@ -169,7 +169,7 @@
             </TableRow>
 
             <TableRow
-                android:layout_height="40dp"
+                android:layout_height="44dp"
                 android:layout_width="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="2dp"
@@ -178,7 +178,7 @@
 
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:id="@+id/cpu2_cardnum1"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -186,7 +186,7 @@
                     android:background="@color/white"/>
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:layout_marginLeft="2dp"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -195,7 +195,7 @@
                     android:background="@color/white"/>
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:layout_marginLeft="2dp"
                     android:textSize="18sp"
                     android:textColor="#000000"
@@ -205,16 +205,16 @@
             </TableRow>
 
             <TableRow
-                android:layout_height="40dp"
+                android:layout_height="44dp"
                 android:layout_width="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="110dp"
+                android:layout_marginTop="95dp"
                 android:layout_marginRight="2dp"
                 android:id="@+id/cards_cpu1">
 
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:id="@+id/cpu1_cardnum1"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -222,7 +222,7 @@
                     android:background="@color/white"/>
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:layout_marginLeft="2dp"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -231,7 +231,7 @@
                     android:background="@color/white"/>
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="30dp"
+                    android:layout_width="34dp"
                     android:layout_marginLeft="2dp"
                     android:textSize="18sp"
                     android:textColor="#000000"
@@ -241,7 +241,7 @@
             </TableRow>
 
             <TableRow
-                android:layout_height="50dp"
+                android:layout_height="44dp"
                 android:layout_width="wrap_content"
                 android:layout_marginBottom="2dp"
                 android:layout_alignParentBottom="true"
@@ -250,7 +250,7 @@
 
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="45dp"
+                    android:layout_width="34dp"
                     android:id="@+id/human_card1"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -258,7 +258,7 @@
                     android:background="@color/white"/>
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="45dp"
+                    android:layout_width="34dp"
                     android:layout_marginLeft="2dp"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -267,7 +267,7 @@
                     android:background="@color/white"/>
                 <TextView
                     android:layout_height="match_parent"
-                    android:layout_width="45dp"
+                    android:layout_width="34dp"
                     android:layout_marginLeft="2dp"
                     android:textSize="18sp"
                     android:textColor="#000000"
@@ -329,7 +329,7 @@
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="46dp"
         android:layout_below="@+id/row2"
         android:id="@+id/row3"
         android:gravity="center_horizontal">
